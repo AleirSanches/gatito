@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, FlatList, SafeAreaView, KeyboardAvoidingView, Platform, Statusbar} from 'react-native';
+import {Text, FlatList, SafeAreaView, KeyboardAvoidingView, Platform, StatusBar} from 'react-native';
 import Item from './Item/index';
 import estilosUniversal from '../../estilos';
 
@@ -27,9 +27,9 @@ const servicos = [
 
 export default function Servicos(){
     return <SafeAreaView style={estilosUniversal.preencher}>
-        <Statusbar/>
+        <StatusBar/>
         <KeyboardAvoidingView
-          behavior= {Platform.OS == "ios" ? "padding" : "height"}
+          behavior= {Platform.OS == 'ios' ? 'padding' : 'height'}
           style={estilosUniversal.preencher}
           
         >
