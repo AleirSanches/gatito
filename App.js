@@ -3,12 +3,12 @@ import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
 
 
-import Servicos from './src/telas/servicos';
+import Carrinho from './src/telas/Carrinho';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
 function App() {
   return <SafeAreaView style= {estilos.tela}>
-    <Servicos/>
+    <Carrinho/>
     </SafeAreaView>
 }
 
