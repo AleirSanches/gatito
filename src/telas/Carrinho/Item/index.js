@@ -1,18 +1,15 @@
 import React, {useState} from 'react';
-import {Text, View, TouchableOpacity} from 'react-native';
+import {Text, View} from 'react-native';
 import estilos from './estilos';
 import CampoInteiro from '../../../componentes/CampoInteiro';
 import Botao from '../../../componentes/Botao';
 
-export default function Item ({nome, preco, descricao}){
-    const [quantidade, setQuantidade] = useState(1);
-    const [total, setTotal] = useState(preco);
-    const [expandir, setExpandir] =useState(false);
+export default function Item ({nome, preco, descricao, quantidade: quantidadeInicial}){
+    const [quantidade, setQuantidade] = useState(quantidadeInicial);
+    const [total, setTotal] = useState(preco * quantidadeInicial);
+    
 
-    const expandirTela = () =>{
-      setExpandir(!expandir);
-      calculaTotalQuantidade(1);
-    }
+  
 
     const calculaTotal =(novaQuantidade) => {
        setTotal(novaQuantidade * preco)
@@ -23,7 +20,7 @@ export default function Item ({nome, preco, descricao}){
       calculaTotal(novaQuantiade);
     }
     return <>
-        <TouchableOpacity style={estilos.informacao} onPress={expandirTela}>
+        <View style={estilos.informacao} >
           < Text style={estilos.nome}>{nome}</Text>
           < Text style={estilos.descricao}>{descricao}</Text>
           < Text style={estilos.preco}>{
@@ -31,8 +28,8 @@ export default function Item ({nome, preco, descricao}){
           }).format(preco)
           }
           </Text>
-        </TouchableOpacity>
-       {!expandir &&
+        </View>
+      
             <View style={estilos.carrinho}>
             <View>
               <View style={estilos.valor}>
@@ -49,10 +46,10 @@ export default function Item ({nome, preco, descricao}){
                 
               </View>
               </View>
-              <Botao valor= "Adicionar ao Carrinho" acao={() => {}}/>
+              <Botao valor= "Remover do Carrinhyo" acao={() => {}}/>
 
           </View>
-          }
+          
        <View style={estilos.divisor}/>
     </>
 }

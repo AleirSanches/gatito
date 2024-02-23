@@ -1,10 +1,9 @@
 import React from 'react';
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
-
-
 import Carrinho from './src/telas/Carrinho';
 import {SafeAreaView, StyleSheet} from 'react-native';
+import Servicos from './src/telas/servicos';
 
 function App() {
   return <SafeAreaView style= {estilos.tela}>

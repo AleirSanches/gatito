@@ -1,7 +1,8 @@
 import React from 'react';
-import {Text, FlatList, SafeAreaView, KeyboardAvoidingView, Platform, StatusBar} from 'react-native';
+import {FlatList} from 'react-native';
 import Item from './Item/index';
 import estilosUniversal from '../../estilos';
+import TelaPadrao from '../../componentes/TelaPadrao/inde';
 
 const servicos = [
     {
@@ -26,26 +27,16 @@ const servicos = [
 ]
 
 export default function Servicos(){
-    return <SafeAreaView style={estilosUniversal.preencher}>
-        <StatusBar/>
-        <KeyboardAvoidingView
-          behavior= {Platform.OS == 'ios' ? 'padding' : 'height'}
-          style={estilosUniversal.preencher}
-          
-        >
-            
-           <FlatList
+    return <TelaPadrao>
+        <FlatList
             data ={servicos}
             renderItem ={({item}) => <Item {...item}/> }
             keyExtractor ={({id}) => String(id)}
             
            />
-        </KeyboardAvoidingView>       
-        
-    
 
-    </SafeAreaView>
-    
-
+    </TelaPadrao>
+            
+ 
     
 }
