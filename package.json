@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^5.11.7",
+    "@react-navigation/native": "^5.9.2",
     "intl": "^1.2.5",
     "react": "17.0.2",
     "react-native": "0.65.1"
