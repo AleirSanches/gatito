@@ -1,23 +1,10 @@
 import React from 'react';
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
-import Carrinho from './src/telas/Carrinho';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import Servicos from './src/telas/servicos';
+import Rotas from './src/Rotas';
 
-function App() {
-  return <SafeAreaView style= {estilos.tela}>
-    <Carrinho/>
-    </SafeAreaView>
+export default function App() {
+  return  <Rotas/>
+   
 }
 
-const estilos =StyleSheet.create({
-  tela:{
-        flex:1,
-        backgroundColor:'#FFFFFF',
-  }
-})
-
-
-
-export default App;
