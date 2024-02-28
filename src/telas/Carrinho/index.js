@@ -1,7 +1,6 @@
 import React from 'react';
 import { FlatList} from 'react-native';
 import Item from './Item/index';
-import TelaPadrao from '../../componentes/TelaPadrao/inde';
 import StatusCarrinho from '../../componentes/StatusCarrinho';
 
 const servicos = [
@@ -34,7 +33,7 @@ const servicos = [
 
 export default function Carrinho(){
     const total = servicos.reduce((soma,{preco, quantidade}) => soma +(preco * quantidade),0);
-    return   <TelaPadrao>
+    return   <>
    <StatusCarrinho total={total}/>
     <FlatList
     data ={servicos}
@@ -44,7 +43,7 @@ export default function Carrinho(){
    />
  
 
-</TelaPadrao>
+</>
     
       
            
